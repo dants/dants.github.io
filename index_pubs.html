@@ -8,7 +8,7 @@
   <title>Publications - Dan Tsafrir</title>
   <link rel=stylesheet href="home.css">
   <!-- <link rel="shortcut icon" href="pics/pooh.balloon.ico"> -->
-
+  <link rel="icon" type="image/x-icon" href="pics/technion-cs.ico">
   <!-- for abstract/bibtex; use .collapseblock/.expandblock from home.css -->
   <script type="text/Javascript"> 
   function toggleblocks (postid) {
@@ -2879,276 +2879,6 @@
      <p>
      </li>
  
-     <!-- ============ cim ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="cim"></a>
-     <span class="docTitle">
-     True IOMMU protection from DMA attacks: when copy is faster than zero copy
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Alex Markuze, Adam Morrison, Dan Tsafrir
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">ASPLOS '16</span>: ACM International Conference on Architectural Support for
-           Programming Languages and Operating Systems
-     </span>
-     <br>
- 
-     <!-- details -->
-     April,
-     2016,
-     Atlanta, GA,
-     pages 249&ndash;262
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('cim_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('cim_bibtex');">BibTeX</a> , 
-     <a  href="papers/cim-asplos-2016.pdf">PDF</a> , 
-     <a  href="http://dx.doi.org/10.1145/2872362.2872379">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="cim_abstract"
-     class="collapseblock">
- 
-     Malicious I/O devices might compromise the OS using DMAs. The OS
-        therefore utilizes the IOMMU to map and unmap every target buffer
-        right before and after its DMA is processed, thereby restricting
-        DMAs to their designated locations. This usage model, however, is
-        not truly secure for two reasons: (1)&nbsp;it provides protection at
-        page granularity only, whereas DMA buffers can reside on the same
-        page as other data; and (2)&nbsp;it delays DMA buffer unmaps due to
-        performance considerations, creating a vulnerability window in
-        which devices can access in-use memory.
-     
-     <br><br>
-     
-        We propose that OSes utilize the IOMMU differently, in a manner
-        that eliminates these two flaws.  Our new usage model restricts
-        device access to a set of shadow DMA buffers that are never
-        unmapped, and it copies DMAed data to/from these buffers, thus
-        providing sub-page protection while eliminating the aforementioned
-        vulnerability window. Our key insight is that the cost of
-        interacting with, and synchronizing access to the slow IOMMU
-        hardware&mdash;required for zero-copy protection against devices&mdash;make
-        {\em copying preferable to zero-copying}.
-     
-     <br><br>
-     
-        We implement our model in Linux and evaluate it with standard
-        networking benchmarks utilizing a 40\,Gb/s NIC. We demonstrate that
-        despite being more secure than the safest preexisting usage model,
-        our approach provides up to 5&times; higher
-        throughput. Additionally, whereas it is inherently less scalable
-        than an IOMMU-less (unprotected) system, our approach incurs only
-        0%&ndash;25% performance degradation in comparison.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="cim_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{markuze16-cim,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Alex Markuze and Adam Morrison and Dan Tsafrir},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {True {IOMMU} protection from {DMA} attacks: when copy is faster than zero copy},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ACM International Conference on Architectural Support for
-           Programming Languages and Operating Systems (ASPLOS)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2016,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {April},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {249--262},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Atlanta, GA}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
-     <!-- ============ nom ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="nom"></a>
-     <span class="docTitle">
-     The nom profit-maximizing operating system
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Muli Ben-Yehuda, Orna Agmon Ben-Yehuda, Dan Tsafrir
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">VEE '16</span>: ACM SIGPLAN/SIGOPS International Conference on
-           Virtual Execution Environments
-     </span>
-     <br>
- 
-     <!-- details -->
-     April,
-     2016,
-     Atlanta, GA,
-     pages 145&ndash;160
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('nom_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('nom_bibtex');">BibTeX</a> , 
-     <a  href="papers/nom-vee-2016.pdf">PDF</a> , 
-     <a  href="http://dx.doi.org/10.1145/2892242.2892250">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="nom_abstract"
-     class="collapseblock">
- 
-     In the near future, cloud providers will sell their users virtual
-         machines with CPU, memory, network, and storage resources whose
-         prices constantly change according to market-driven supply and
-         demand conditions. Running traditional operating systems in these
-         virtual machines is a poor fit: traditional operating systems are
-         not aware of changing resource prices and their sole aim is to
-         maximize performance with no consideration of costs. Consequently,
-         they yield low profits.
-     
-     <br><br>
-     
-         We present nom, a profit-maximizing operating system designed for
-         cloud computing platforms with dynamic resource
-         prices. Applications running on nom aim to maximize profits by
-         optimizing simultaneously for performance and resource costs. The
-         nom kernel provides them with direct access to the underlying
-         hardware and full control over their private software
-         stacks. Since nom applications know there is no single &ldquo;best&rdquo;
-         software stack, they adapt their stacks' behavior on the fly
-         according to the current price of available resources and their
-         private utility from them, which differs between applications. We
-         show that in addition to achieving up to 3.9x better throughput
-         and up to 9.1x better latency, nom applications yield up to 11.1x
-         higher profits when compared with the same applications running on
-         Linux and OSv.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="nom_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{ben-yehuda16-nom,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Muli Ben-Yehuda and Orna {Agmon Ben-Yehuda} and Dan Tsafrir},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {The nom profit-maximizing operating system},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ACM SIGPLAN/SIGOPS International Conference on
-           Virtual Execution Environments (VEE)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2016,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {April},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {145--160},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Atlanta, GA}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
      <!-- ============ waci ============ -->
      <li>
  
@@ -3422,6 +3152,276 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {49--65},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Atlanta, GA}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ cim ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="cim"></a>
+     <span class="docTitle">
+     True IOMMU protection from DMA attacks: when copy is faster than zero copy
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Alex Markuze, Adam Morrison, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">ASPLOS '16</span>: ACM International Conference on Architectural Support for
+           Programming Languages and Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     April,
+     2016,
+     Atlanta, GA,
+     pages 249&ndash;262
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('cim_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('cim_bibtex');">BibTeX</a> , 
+     <a  href="papers/cim-asplos-2016.pdf">PDF</a> , 
+     <a  href="http://dx.doi.org/10.1145/2872362.2872379">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="cim_abstract"
+     class="collapseblock">
+ 
+     Malicious I/O devices might compromise the OS using DMAs. The OS
+        therefore utilizes the IOMMU to map and unmap every target buffer
+        right before and after its DMA is processed, thereby restricting
+        DMAs to their designated locations. This usage model, however, is
+        not truly secure for two reasons: (1)&nbsp;it provides protection at
+        page granularity only, whereas DMA buffers can reside on the same
+        page as other data; and (2)&nbsp;it delays DMA buffer unmaps due to
+        performance considerations, creating a vulnerability window in
+        which devices can access in-use memory.
+     
+     <br><br>
+     
+        We propose that OSes utilize the IOMMU differently, in a manner
+        that eliminates these two flaws.  Our new usage model restricts
+        device access to a set of shadow DMA buffers that are never
+        unmapped, and it copies DMAed data to/from these buffers, thus
+        providing sub-page protection while eliminating the aforementioned
+        vulnerability window. Our key insight is that the cost of
+        interacting with, and synchronizing access to the slow IOMMU
+        hardware&mdash;required for zero-copy protection against devices&mdash;make
+        {\em copying preferable to zero-copying}.
+     
+     <br><br>
+     
+        We implement our model in Linux and evaluate it with standard
+        networking benchmarks utilizing a 40\,Gb/s NIC. We demonstrate that
+        despite being more secure than the safest preexisting usage model,
+        our approach provides up to 5&times; higher
+        throughput. Additionally, whereas it is inherently less scalable
+        than an IOMMU-less (unprotected) system, our approach incurs only
+        0%&ndash;25% performance degradation in comparison.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="cim_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{markuze16-cim,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Alex Markuze and Adam Morrison and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {True {IOMMU} protection from {DMA} attacks: when copy is faster than zero copy},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM International Conference on Architectural Support for
+           Programming Languages and Operating Systems (ASPLOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2016,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {April},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {249--262},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Atlanta, GA}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ nom ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="nom"></a>
+     <span class="docTitle">
+     The nom profit-maximizing operating system
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Muli Ben-Yehuda, Orna Agmon Ben-Yehuda, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">VEE '16</span>: ACM SIGPLAN/SIGOPS International Conference on
+           Virtual Execution Environments
+     </span>
+     <br>
+ 
+     <!-- details -->
+     April,
+     2016,
+     Atlanta, GA,
+     pages 145&ndash;160
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('nom_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('nom_bibtex');">BibTeX</a> , 
+     <a  href="papers/nom-vee-2016.pdf">PDF</a> , 
+     <a  href="http://dx.doi.org/10.1145/2892242.2892250">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="nom_abstract"
+     class="collapseblock">
+ 
+     In the near future, cloud providers will sell their users virtual
+         machines with CPU, memory, network, and storage resources whose
+         prices constantly change according to market-driven supply and
+         demand conditions. Running traditional operating systems in these
+         virtual machines is a poor fit: traditional operating systems are
+         not aware of changing resource prices and their sole aim is to
+         maximize performance with no consideration of costs. Consequently,
+         they yield low profits.
+     
+     <br><br>
+     
+         We present nom, a profit-maximizing operating system designed for
+         cloud computing platforms with dynamic resource
+         prices. Applications running on nom aim to maximize profits by
+         optimizing simultaneously for performance and resource costs. The
+         nom kernel provides them with direct access to the underlying
+         hardware and full control over their private software
+         stacks. Since nom applications know there is no single &ldquo;best&rdquo;
+         software stack, they adapt their stacks' behavior on the fly
+         according to the current price of available resources and their
+         private utility from them, which differs between applications. We
+         show that in addition to achieving up to 3.9x better throughput
+         and up to 9.1x better latency, nom applications yield up to 11.1x
+         higher profits when compared with the same applications running on
+         Linux and OSv.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="nom_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{ben-yehuda16-nom,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Muli Ben-Yehuda and Orna {Agmon Ben-Yehuda} and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {The nom profit-maximizing operating system},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM SIGPLAN/SIGOPS International Conference on
+           Virtual Execution Environments (VEE)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2016,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {April},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {145--160},</td>
      </tr>
      <tr>
        <td align=right valign=top>address</td>
@@ -6022,6 +6022,113 @@
  <h3>2009</h3>
  <ul>
  
+     <!-- ============ scary-rev1 ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="scary-rev1"></a>
+     <span class="docTitle">
+     SCARY iterator assignment and initialization revision 1
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Robert Klarer, Bjarne Stroustrup, Dan Tsafrir, Michael
+         Wong
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     ISO/IEC <span class="docVenueAbrv">C++ Standards Committee Paper</span> WG21/N2980=09-0170
+     </span>
+     <br>
+ 
+     <!-- details -->
+     October,
+     2009,
+     Santa Cruz, California
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('scary-rev1_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('scary-rev1_bibtex');">BibTeX</a> , 
+     <a  href="papers/Scary09Rev1C++Committee.pdf">PDF</a> , 
+     <a  href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2980.pdf">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="scary-rev1_abstract"
+     class="collapseblock">
+ 
+     We propose a requirement that a standard container's iterator
+         types have no dependency on any type argument apart from the
+         container's <tt>value_type</tt>, <tt>difference_type</tt>,
+         <tt>pointer</tt> type, and <tt>const_pointer</tt> type. In
+         particular, the types of a standard container's iterators should
+         not depend on the container's <tt>key_compare</tt>,
+         <tt>hasher</tt>, <tt>key_equal</tt>, or <tt>allocator</tt> types.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="scary-rev1_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{klarer09-scary-rev1,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Robert Klarer and Bjarne Stroustrup and Dan Tsafrir and Michael
+         Wong},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {SCARY iterator assignment and initialization revision 1},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ISO/IEC C++ Standards Committee Paper WG21/N2980=09-0170},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2009,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {October},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Santa Cruz, California}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
      <!-- ============ inner ============ -->
      <li>
  
@@ -6145,113 +6252,6 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {Orlando, Florida}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
-     <!-- ============ scary-rev1 ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="scary-rev1"></a>
-     <span class="docTitle">
-     SCARY iterator assignment and initialization revision 1
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Robert Klarer, Bjarne Stroustrup, Dan Tsafrir, Michael
-         Wong
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     ISO/IEC <span class="docVenueAbrv">C++ Standards Committee Paper</span> WG21/N2980=09-0170
-     </span>
-     <br>
- 
-     <!-- details -->
-     October,
-     2009,
-     Santa Cruz, California
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('scary-rev1_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('scary-rev1_bibtex');">BibTeX</a> , 
-     <a  href="papers/Scary09Rev1C++Committee.pdf">PDF</a> , 
-     <a  href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2980.pdf">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="scary-rev1_abstract"
-     class="collapseblock">
- 
-     We propose a requirement that a standard container's iterator
-         types have no dependency on any type argument apart from the
-         container's <tt>value_type</tt>, <tt>difference_type</tt>,
-         <tt>pointer</tt> type, and <tt>const_pointer</tt> type. In
-         particular, the types of a standard container's iterators should
-         not depend on the container's <tt>key_compare</tt>,
-         <tt>hasher</tt>, <tt>key_equal</tt>, or <tt>allocator</tt> types.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="scary-rev1_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{klarer09-scary-rev1,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Robert Klarer and Bjarne Stroustrup and Dan Tsafrir and Michael
-         Wong},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {SCARY iterator assignment and initialization revision 1},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ISO/IEC C++ Standards Committee Paper WG21/N2980=09-0170},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2009,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {October},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Santa Cruz, California}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -6522,128 +6522,6 @@
      <p>
      </li>
  
-     <!-- ============ priv ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="priv"></a>
-     <span class="docTitle">
-     The murky issue of changing process identity: revising &ldquo;setuid demystified&rdquo;
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Dan Tsafrir, Dilma Da Silva, David Wagner
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">USENIX ;login</span>
-     </span>
-     <br>
- 
-     <!-- details -->
-     June,
-     2008,
-     pages 55&ndash;66,
-     volume 33,
-     number 3
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('priv_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('priv_bibtex');">BibTeX</a> , 
-     <a  href="papers/Identity08login.pdf">PDF</a> , 
-     <a  href="http://www.usenix.org/publications/login/2008-06/index.html">Definitive</a> , 
-     <a  href="http://code.google.com/p/change-process-identity/">Software</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="priv_abstract"
-     class="collapseblock">
- 
-     Dropping unneeded process privileges promotes security, but is
-         notoriously error-prone due to confusing set&lowast;id system  
-         calls with unclear semantics and subtle portability issues. 
-         To make things worse, existing recipes to accomplish the task are
-         lacking, related manuals can be misleading, and the
-         associated kernel subsystem might contain bugs.   
-         We therefore proclaim the system as untrustworthy when it comes to the
-         subject matter and suggest a defensive easy-to-use solution that 
-         addresses all concerns.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="priv_bibtex"
-     class="collapseblock">
- 
-     @Article{tsafrir08-priv,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Dan Tsafrir and Dilma Da Silva and David Wagner},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {The murky issue of changing process identity: revising ``setuid demystified''},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>journal</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {USENIX ;login},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>volume</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       33,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>number</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       3,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2008,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {June},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {55--66}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
      <!-- ============ path-res ============ -->
      <li>
  
@@ -6771,6 +6649,128 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {(submitted for publication)}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ priv ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="priv"></a>
+     <span class="docTitle">
+     The murky issue of changing process identity: revising &ldquo;setuid demystified&rdquo;
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Dan Tsafrir, Dilma Da Silva, David Wagner
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">USENIX ;login</span>
+     </span>
+     <br>
+ 
+     <!-- details -->
+     June,
+     2008,
+     pages 55&ndash;66,
+     volume 33,
+     number 3
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('priv_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('priv_bibtex');">BibTeX</a> , 
+     <a  href="papers/Identity08login.pdf">PDF</a> , 
+     <a  href="http://www.usenix.org/publications/login/2008-06/index.html">Definitive</a> , 
+     <a  href="http://code.google.com/p/change-process-identity/">Software</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="priv_abstract"
+     class="collapseblock">
+ 
+     Dropping unneeded process privileges promotes security, but is
+         notoriously error-prone due to confusing set&lowast;id system  
+         calls with unclear semantics and subtle portability issues. 
+         To make things worse, existing recipes to accomplish the task are
+         lacking, related manuals can be misleading, and the
+         associated kernel subsystem might contain bugs.   
+         We therefore proclaim the system as untrustworthy when it comes to the
+         subject matter and suggest a defensive easy-to-use solution that 
+         addresses all concerns.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="priv_bibtex"
+     class="collapseblock">
+ 
+     @Article{tsafrir08-priv,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Dan Tsafrir and Dilma Da Silva and David Wagner},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {The murky issue of changing process identity: revising ``setuid demystified''},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>journal</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {USENIX ;login},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>volume</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       33,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>number</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       3,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2008,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {June},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {55--66}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -7292,148 +7292,6 @@
      <p>
      </li>
  
-     <!-- ============ pred ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="pred"></a>
-     <span class="docTitle">
-     Backfilling using system-generated predictions rather than
-         user runtime estimates
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">TPDS</span>: IEEE Transactions on Parallel and Distributed Systems
-     </span>
-     <br>
- 
-     <!-- details -->
-     June,
-     2007,
-     pages 789&ndash;803,
-     volume 18,
-     number 6
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('pred_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('pred_bibtex');">BibTeX</a> , 
-     <a  href="papers/Pred07TPDS.pdf">PDF</a> , 
-     <a  href="http://doi.ieeecomputersociety.org/10.1109/TPDS.2007.70606">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="pred_abstract"
-     class="collapseblock">
- 
-     The most commonly used scheduling algorithm for parallel
-         supercomputers is FCFS with backfilling, as originally introduced
-         in the EASY scheduler.  Backfilling means that short jobs are
-         allowed to run ahead of their time provided they do not delay
-         previously queued jobs (or at least the first queued job).  To
-         make such determinations possible, users are required to provide
-         estimates of how long jobs will run, and jobs that violate these
-         estimates are killed.  Empirical studies have repeatedly shown
-         that user estimates are inaccurate, and that system-generated
-         predictions based on history may be significantly better.
-         However, predictions have not been incorporated into production
-         schedulers, partially due to a misconception (that we resolve)
-         claiming inaccuracy actually improves performance, but mainly
-         because underprediction is technically unacceptable: users will
-         not tolerate jobs being killed just because system predictions
-         were too short.  We solve this problem by divorcing kill-time from
-         the runtime prediction, and correcting predictions adaptively as
-         needed if they are proved wrong.  The end result is a surprisingly
-         simple scheduler, which requires minimal deviations from current
-         practices (e.g. using FCFS as the basis), and behaves exactly
-         like EASY as far as users are concerned; nevertheless, it achieves
-         significant improvements in performance, predictability, and
-         accuracy.  Notably, this is based on a very simple runtime
-         predictor that just averages the runtimes of the last two jobs by
-         the same user; counterintuitively, our results indicate that using
-         recent data is more important than mining the history for similar
-         jobs.  All the techniques suggested in this paper can be used to
-         enhance any backfilling algorithm, and are not limited to EASY.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="pred_bibtex"
-     class="collapseblock">
- 
-     @Article{tsafrir07-pred,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Backfilling using system-generated predictions rather than
-         user runtime estimates},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>journal</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {IEEE Transactions on Parallel and Distributed Systems (TPDS)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>volume</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       18,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>number</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       6,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2007,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {June},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {789--803}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
      <!-- ============ context ============ -->
      <li>
  
@@ -7570,6 +7428,148 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {San-Diego, California}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ pred ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="pred"></a>
+     <span class="docTitle">
+     Backfilling using system-generated predictions rather than
+         user runtime estimates
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">TPDS</span>: IEEE Transactions on Parallel and Distributed Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     June,
+     2007,
+     pages 789&ndash;803,
+     volume 18,
+     number 6
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('pred_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('pred_bibtex');">BibTeX</a> , 
+     <a  href="papers/Pred07TPDS.pdf">PDF</a> , 
+     <a  href="http://doi.ieeecomputersociety.org/10.1109/TPDS.2007.70606">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="pred_abstract"
+     class="collapseblock">
+ 
+     The most commonly used scheduling algorithm for parallel
+         supercomputers is FCFS with backfilling, as originally introduced
+         in the EASY scheduler.  Backfilling means that short jobs are
+         allowed to run ahead of their time provided they do not delay
+         previously queued jobs (or at least the first queued job).  To
+         make such determinations possible, users are required to provide
+         estimates of how long jobs will run, and jobs that violate these
+         estimates are killed.  Empirical studies have repeatedly shown
+         that user estimates are inaccurate, and that system-generated
+         predictions based on history may be significantly better.
+         However, predictions have not been incorporated into production
+         schedulers, partially due to a misconception (that we resolve)
+         claiming inaccuracy actually improves performance, but mainly
+         because underprediction is technically unacceptable: users will
+         not tolerate jobs being killed just because system predictions
+         were too short.  We solve this problem by divorcing kill-time from
+         the runtime prediction, and correcting predictions adaptively as
+         needed if they are proved wrong.  The end result is a surprisingly
+         simple scheduler, which requires minimal deviations from current
+         practices (e.g. using FCFS as the basis), and behaves exactly
+         like EASY as far as users are concerned; nevertheless, it achieves
+         significant improvements in performance, predictability, and
+         accuracy.  Notably, this is based on a very simple runtime
+         predictor that just averages the runtimes of the last two jobs by
+         the same user; counterintuitively, our results indicate that using
+         recent data is more important than mining the history for similar
+         jobs.  All the techniques suggested in this paper can be used to
+         enhance any backfilling algorithm, and are not limited to EASY.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="pred_bibtex"
+     class="collapseblock">
+ 
+     @Article{tsafrir07-pred,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Backfilling using system-generated predictions rather than
+         user runtime estimates},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>journal</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {IEEE Transactions on Parallel and Distributed Systems (TPDS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>volume</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       18,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>number</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       6,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2007,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {June},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {789--803}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -8783,6 +8783,139 @@
  <h3>2005</h3>
  <ul>
  
+     <!-- ============ noise ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="noise"></a>
+     <span class="docTitle">
+     System noise, OS clock ticks, and fine-grained parallel
+         applications
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson, Scott
+         Kirkpatrick
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">ICS '05</span>: ACM International Conference on Supercomputing
+     </span>
+     <br>
+ 
+     <!-- details -->
+     June,
+     2005,
+     Cambridge, Massachusetts,
+     pages 303&ndash;312
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('noise_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('noise_bibtex');">BibTeX</a> , 
+     <a  href="papers/Noise05ICS.pdf">PDF</a> , 
+     <a  href="http://doi.acm.org/10.1145/1088149.1088190">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="noise_abstract"
+     class="collapseblock">
+ 
+     As parallel jobs get bigger in size and finer in granularity,
+         &ldquo;system noise&rdquo; is increasingly becoming a problem.  In fact,
+         fine-grained jobs on clusters with thousands of SMP nodes run
+         faster if a processor is intentionally left idle (per node), thus
+         enabling a separation of &ldquo;system noise&rdquo; from the computation.
+         Paying a cost in average processing speed at a node for the sake
+         of eliminating occasional processes delays is (unfortunately)
+         beneficial, as such delays are enormously magnified when one late
+         process holds up thousands of peers with which it synchronizes.
+     
+     <br><br>
+     
+         We provide a probabilistic argument showing that, under certain
+         conditions, the effect of such noise is linearly proportional to
+         the size of the cluster (as is often empirically observed).  We
+         then identify a major source of noise to be indirect overhead of
+         periodic OS clock interrupts (&ldquo;ticks&rdquo;), that are used by all
+         general-purpose OSs as a means of maintaining control.  This is
+         shown for various grain sizes, platforms, tick frequencies, and
+         OSs.  To eliminate such noise, we suggest replacing ticks with an
+         alternative mechanism we call &ldquo;smart timers&rdquo;.  This turns out to
+         also be in line with needs of desktop and mobile computing,
+         increasing the chances of the suggested change to be accepted.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="noise_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{tsafrir05-noise,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson and Scott
+         Kirkpatrick},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {System noise, {OS} clock ticks, and fine-grained parallel
+         applications},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM International Conference on Supercomputing
+         (ICS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2005,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {June},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {303--312},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Cambridge, Massachusetts}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
      <!-- ============ est ============ -->
      <li>
  
@@ -8910,139 +9043,6 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {Lecture Notes in Computer Science, Volume 3834}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
-     <!-- ============ noise ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="noise"></a>
-     <span class="docTitle">
-     System noise, OS clock ticks, and fine-grained parallel
-         applications
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson, Scott
-         Kirkpatrick
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">ICS '05</span>: ACM International Conference on Supercomputing
-     </span>
-     <br>
- 
-     <!-- details -->
-     June,
-     2005,
-     Cambridge, Massachusetts,
-     pages 303&ndash;312
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('noise_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('noise_bibtex');">BibTeX</a> , 
-     <a  href="papers/Noise05ICS.pdf">PDF</a> , 
-     <a  href="http://doi.acm.org/10.1145/1088149.1088190">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="noise_abstract"
-     class="collapseblock">
- 
-     As parallel jobs get bigger in size and finer in granularity,
-         &ldquo;system noise&rdquo; is increasingly becoming a problem.  In fact,
-         fine-grained jobs on clusters with thousands of SMP nodes run
-         faster if a processor is intentionally left idle (per node), thus
-         enabling a separation of &ldquo;system noise&rdquo; from the computation.
-         Paying a cost in average processing speed at a node for the sake
-         of eliminating occasional processes delays is (unfortunately)
-         beneficial, as such delays are enormously magnified when one late
-         process holds up thousands of peers with which it synchronizes.
-     
-     <br><br>
-     
-         We provide a probabilistic argument showing that, under certain
-         conditions, the effect of such noise is linearly proportional to
-         the size of the cluster (as is often empirically observed).  We
-         then identify a major source of noise to be indirect overhead of
-         periodic OS clock interrupts (&ldquo;ticks&rdquo;), that are used by all
-         general-purpose OSs as a means of maintaining control.  This is
-         shown for various grain sizes, platforms, tick frequencies, and
-         OSs.  To eliminate such noise, we suggest replacing ticks with an
-         alternative mechanism we call &ldquo;smart timers&rdquo;.  This turns out to
-         also be in line with needs of desktop and mobile computing,
-         increasing the chances of the suggested change to be accepted.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="noise_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{tsafrir05-noise,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson and Scott
-         Kirkpatrick},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {System noise, {OS} clock ticks, and fine-grained parallel
-         applications},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ACM International Conference on Supercomputing
-         (ICS)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2005,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {June},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {303--312},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Cambridge, Massachusetts}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
