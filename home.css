@@ -1,0 +1,300 @@
+/* 
+ * overall settings 
+ */
+body { /* don't need this, as everything is in table.myHomepage */
+}
+.collapseblock { /* for java script abstract/bibtex open/close */
+    display: none;
+}
+.expandblock   { /* for java script abstract/bibtex open/close */
+    display: block
+}
+
+/*
+ * The entire home page resides with in this table
+ */
+table.myHomepage { 
+    font-family: /*comic sans ms,*/ verdana, arial, helvetica, sans-serif;
+}
+table.myHomepage td {
+    font-size: 10pt;
+}
+
+/*
+ * Top table (picture, name, and affiliation)
+ * [ see: http://www.somacon.com/p141.php (explains table properties) ]
+ */
+table.myTopTbl { 
+    border-collapse: separate;  /* (collapse|seperate) int/ext border */
+    border-spacing: 1px;	/* between external/internal border lines */
+    background-color: gray;	/* between external/internal border lines */
+    border-style: solid;	/* of external */
+    border-width: 1px; 		/* of external */
+    border-color: black;	/* of external */
+}
+table.myTopTbl td {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: purple;
+    background-color: #778899;	/*LightSlateGray*/;
+    /*-moz-border-radius: 3px;*/
+}
+.myName { /* name (dt) in top table */
+    font-size: 30pt; 
+    color: white;
+    margin-top: 0; 
+    margin-bottom: 0;
+    text-decoration: none;
+    text-align: center;
+}
+.myAffiliation { /* affiliation (dt) in top table */
+    font-size: 16pt; 
+    color: white;
+    margin-top: 0; 
+    margin-bottom: 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*
+ * Left table (navigation)
+ */
+table.myLeftTbl { 
+    border-collapse: separate;
+    border-spacing: 1px;
+    background-color: gray;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+}
+table.myLeftTbl td {
+    border-width: 1px;
+    padding: 4px;
+    border-style: outset;
+    border-color: purple;
+    background-color: #778899;	/*LightSlateGray*/;
+    -moz-border-radius: 4px;	/* makes buttons round; nonstandard */
+}
+table.myLeftTbl a { 
+
+    /* this part makes the entire td clickable (not just the href) */
+    display: block; 
+    width: 100%;
+
+    /* this customizes the text of the href */
+    font-size: 8pt; 
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+/*
+ * The actual "body" (this is the bottom right of the page, which contains
+ * changing information)
+ */
+.myBody { /* the td that surrounds THIS_IS_THE_BODY (where html-pieces go) */
+}
+.myHref { /* hrefs should use this class */
+    text-decoration: none;
+    color: purple
+}
+
+/*
+ * Just in case we want to control these tables in isolation; otherwise,
+ * everything is inherited from table.myHomepage
+ */
+table.myContact { 	/* set font type here */
+}
+table.myContact td {	/* set font size here */
+    padding: 5px;
+}
+table.myBio {		/* set font type here */
+}
+table.myBio td {	/* set font size here */
+    padding: 5px;
+    min-width: 90px;
+}
+
+/*
+ * Stuff from publication list
+ */
+.docTitle {
+    font-weight: bold;
+}
+.docAuthors {
+}
+.docVenue {
+    font-style: italic;
+    color: gray;
+}
+.docVenueAbrv {
+    color: green;
+    font-weight: bold;
+}
+.docOther {
+}
+
+
+/*
+ * bibtex entry (the text that expands when clicking 'bibtex')
+ */
+table.myBib {		/* for border, font type, and such */
+}
+table.myBib td {	/* for font-size */
+}
+
+
+/* 
+ * homelink / homepage icon for, e.g., students
+ */
+.homelink span {
+  display: none;
+}
+.homelink, .nohomelink  {
+  display: block;
+  width: 30px;
+  height: 16px;
+  float: left;
+}
+.homelink {
+  background: white url(pics/homepage.gif) no-repeat center left;
+}
+
+/*
+ * people list
+ */
+.peoplelist {
+  list-style-type: none; 
+  margin: 0; 
+  width: 80%; 
+  float: left; 
+  margin-bottom: 1.5em; 
+}
+
+.peoplelist li {
+  margin: 3px 0;
+  float: left; 
+  width: 32%; 
+  white-space: nowrap;  
+}
+
+/*
+ * my students list
+ */
+.studentlist {
+  width: 650px; 
+  padding-bottom: 5;
+
+}
+
+.studentlist li {
+    /*padding: 3px;*/
+    margin-top: 5px;
+}
+
+.studentIcon {
+    float: right;
+    vertical-align: top;
+/*    height: 15px;*/
+    width: 20px; 
+    text-decoration: none;
+}
+
+.studentName {
+    font-weight: bold;
+}
+.studentDegree {
+    /* color: MediumSeaGreen; */
+    /* font-style: italic; */
+}
+.studentDegreeDate {
+    color: gray; 
+    /* font-style: italic; */
+}
+.studentDegreeTitle {
+    /* font-style: italic; */
+}
+.studentCoadvisor {
+    /* color: MediumSeaGreen; */
+    color: purple;
+    text-decoration: none;
+}
+.studentAward {
+    color: purple;
+    text-decoration: none;
+}
+.studentCoadvisor:hover, .studentAward:hover {
+    text-decoration: underline;
+}
+
+/*
+ * PC list
+ */
+.pclist {
+  list-style-type: none;
+  margin: 0;
+  width: 80%;
+/* float: left; */
+  margin-bottom: 1.5em;
+}
+.pclist li {
+  margin: 3px 0;
+/*  float: left; */
+  width: 32%;
+  white-space: nowrap; 
+}
+
+
+/*
+ * systems venues dates and deadline
+ */
+table.sysVenues { 
+    font-family: /*comic sans ms,*/ verdana, arial, helvetica, sans-serif;
+}
+.sysVenuesTR0 { /* tr-s within a month have same bg color */
+    /* background-color: #F5ECCE; */
+    background-color: WhiteSmoke;
+
+}
+.sysVenuesTR1 { /* tr-s of the following month have a different bg color */
+/*    background-color: #FAFAFA;*/
+    background-color: LightSteelBlue;
+}
+table.sysVenues td {
+    padding-right: 10px;
+    padding-left:  10px;
+    padding-top:    4px;
+    padding-bottom: 4px;
+    vertical-align: text-top;
+    white-space:    nowrap; 
+    overflow:       hidden;
+    font-size:      70%;
+}
+table.sysVenues th { /* same as td, plus bold and italic */
+    padding-right:    10px;
+    padding-left:     10px;
+    padding-top:      4px;
+    padding-bottom:   4px;
+    vertical-align:   text-top;
+    text-align:       left;
+    font-style:       italic;
+    font-weight:      bold;
+    font-size:        70%;
+}
+.sysVenuesLoction {
+    /*font-style: italic;*/
+    font-size:  70%;
+    /*color: #A4A4A4;*/ /* light gray */
+    color: gray;
+}
+.sysVenuesTopic {
+    /*font-style: italic;*/
+    font-size:  70%;
+    /*color: #A4A4A4;*/ /* light gray */
+    color: gray;
+}
+.sysVenuesLink { /* hrefs should use this class */
+    color: purple
+}
