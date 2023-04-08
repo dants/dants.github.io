@@ -155,7 +155,8 @@
  
      <!-- details -->
      July,
-     2023
+     2023,
+     to appear
      <br>
  
      <!-- availabilities -->
@@ -233,7 +234,13 @@
        <td align=right valign=top>month</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {July}</td>
+       {July},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -8904,6 +8911,139 @@
  <h3>2005</h3>
  <ul>
  
+     <!-- ============ noise ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="noise"></a>
+     <span class="docTitle">
+     System noise, OS clock ticks, and fine-grained parallel
+         applications
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson, Scott
+         Kirkpatrick
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">ICS '05</span>: ACM International Conference on Supercomputing
+     </span>
+     <br>
+ 
+     <!-- details -->
+     June,
+     2005,
+     Cambridge, Massachusetts,
+     pages 303&ndash;312
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('noise_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('noise_bibtex');">BibTeX</a> , 
+     <a  href="papers/Noise05ICS.pdf">PDF</a> , 
+     <a  href="http://doi.acm.org/10.1145/1088149.1088190">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="noise_abstract"
+     class="collapseblock">
+ 
+     As parallel jobs get bigger in size and finer in granularity,
+         &ldquo;system noise&rdquo; is increasingly becoming a problem.  In fact,
+         fine-grained jobs on clusters with thousands of SMP nodes run
+         faster if a processor is intentionally left idle (per node), thus
+         enabling a separation of &ldquo;system noise&rdquo; from the computation.
+         Paying a cost in average processing speed at a node for the sake
+         of eliminating occasional processes delays is (unfortunately)
+         beneficial, as such delays are enormously magnified when one late
+         process holds up thousands of peers with which it synchronizes.
+     
+     <br><br>
+     
+         We provide a probabilistic argument showing that, under certain
+         conditions, the effect of such noise is linearly proportional to
+         the size of the cluster (as is often empirically observed).  We
+         then identify a major source of noise to be indirect overhead of
+         periodic OS clock interrupts (&ldquo;ticks&rdquo;), that are used by all
+         general-purpose OSs as a means of maintaining control.  This is
+         shown for various grain sizes, platforms, tick frequencies, and
+         OSs.  To eliminate such noise, we suggest replacing ticks with an
+         alternative mechanism we call &ldquo;smart timers&rdquo;.  This turns out to
+         also be in line with needs of desktop and mobile computing,
+         increasing the chances of the suggested change to be accepted.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="noise_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{tsafrir05-noise,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson and Scott
+         Kirkpatrick},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {System noise, {OS} clock ticks, and fine-grained parallel
+         applications},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM International Conference on Supercomputing
+         (ICS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2005,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {June},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {303--312},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Cambridge, Massachusetts}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
      <!-- ============ est ============ -->
      <li>
  
@@ -9031,139 +9171,6 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {Lecture Notes in Computer Science, Volume 3834}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
-     <!-- ============ noise ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="noise"></a>
-     <span class="docTitle">
-     System noise, OS clock ticks, and fine-grained parallel
-         applications
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Dan Tsafrir, Yoav Etsion, Dror G. Feitelson, Scott
-         Kirkpatrick
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">ICS '05</span>: ACM International Conference on Supercomputing
-     </span>
-     <br>
- 
-     <!-- details -->
-     June,
-     2005,
-     Cambridge, Massachusetts,
-     pages 303&ndash;312
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('noise_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('noise_bibtex');">BibTeX</a> , 
-     <a  href="papers/Noise05ICS.pdf">PDF</a> , 
-     <a  href="http://doi.acm.org/10.1145/1088149.1088190">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="noise_abstract"
-     class="collapseblock">
- 
-     As parallel jobs get bigger in size and finer in granularity,
-         &ldquo;system noise&rdquo; is increasingly becoming a problem.  In fact,
-         fine-grained jobs on clusters with thousands of SMP nodes run
-         faster if a processor is intentionally left idle (per node), thus
-         enabling a separation of &ldquo;system noise&rdquo; from the computation.
-         Paying a cost in average processing speed at a node for the sake
-         of eliminating occasional processes delays is (unfortunately)
-         beneficial, as such delays are enormously magnified when one late
-         process holds up thousands of peers with which it synchronizes.
-     
-     <br><br>
-     
-         We provide a probabilistic argument showing that, under certain
-         conditions, the effect of such noise is linearly proportional to
-         the size of the cluster (as is often empirically observed).  We
-         then identify a major source of noise to be indirect overhead of
-         periodic OS clock interrupts (&ldquo;ticks&rdquo;), that are used by all
-         general-purpose OSs as a means of maintaining control.  This is
-         shown for various grain sizes, platforms, tick frequencies, and
-         OSs.  To eliminate such noise, we suggest replacing ticks with an
-         alternative mechanism we call &ldquo;smart timers&rdquo;.  This turns out to
-         also be in line with needs of desktop and mobile computing,
-         increasing the chances of the suggested change to be accepted.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="noise_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{tsafrir05-noise,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Dan Tsafrir and Yoav Etsion and Dror G. Feitelson and Scott
-         Kirkpatrick},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {System noise, {OS} clock ticks, and fine-grained parallel
-         applications},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ACM International Conference on Supercomputing
-         (ICS)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2005,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {June},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {303--312},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Cambridge, Massachusetts}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
