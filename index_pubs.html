@@ -250,82 +250,46 @@
      <p>
      </li>
  
- </ul>
- 
- 
- <!-- ==================== 2022 ==================== -->
- <!-- ==================== 2022 ==================== -->
- <!-- ==================== 2022 ==================== -->
- <h3>2022</h3>
- <ul>
- 
-     <!-- ============ nicmem ============ -->
+     <!-- ============ ssdcarbon ============ -->
      <li>
  
      <!-- anchor -->
-     <a name="nicmem"></a>
+     <a name="ssdcarbon"></a>
      <span class="docTitle">
-     The benefits of general-purpose on-NIC memory
+     Degrading Data to Save the Planet
      </span>
      <br>
  
      <!-- author -->
      <span class="docAuthors">
-     Boris Pismenny, Liran Liss, Adam Morrison, Dan Tsafrir
+     Aviad Zuck, Donald E. Porter, Dan Tsafrir
      </span>
      <br>
  
      <!-- venue -->
      <span class="docVenue">
-     <span class="docVenueAbrv">ASPLOS '22</span>: ACM International Conference on Architectural Support for
-         Programming Languages and Operating Systems
+     <span class="docVenueAbrv">HotOS '23</span>: ACM Workshop on Hot Topics in Operating Systems
      </span>
      <br>
  
      <!-- details -->
-     February,
-     2022,
-     Lausanne, Switzerland,
-     pages 1130&ndash;1147
+     June,
+     2023,
+     Providence, RI,
+     to appear
      <br>
  
      <!-- availabilities -->
-     <a  href="javascript:toggleblocks('nicmem_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('nicmem_bibtex');">BibTeX</a> , 
-     <a  href="papers/nicmem-asplos-2022.pdf">PDF</a> , 
-     <a  href="https://doi.org/10.1145/3503222.3507711">Definitive</a>
+     <a  href="javascript:toggleblocks('ssdcarbon_bibtex');">BibTeX</a>
      <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="nicmem_abstract"
-     class="collapseblock">
- 
-     We propose to use the small, newly available on-NIC memory
-       (&ldquo;nicmem&rdquo;) to keep pace with the rapidly increasing performance of
-       NICs. We motivate our proposal by accelerating two types of workload
-       classes: NFV and key-value stores. As NFV workloads frequently
-       operate on headers&mdash;rather than data&mdash;of incoming packets, we
-       introduce a new packet-processing architecture that splits between
-       the two, keeping the data on nicmem when possible and thus reducing
-       PCIe traffic, memory bandwidth, and CPU processing time. Our
-       approach consequently shortens NFV latency by up to 23% and
-       increases its throughput by up to 19%. Similarly, because key-value
-       stores commonly exhibit skewed distributions, we introduce a new
-       network stack mechanism that lets applications keep frequently
-       accessed items on nicmem. Our design shortens memcached latency by
-       up to 43% and increases its throughput by up to 80%.
- 
-     </div> <!-- of collapse/expend -->
  
      <!-- bibtex (collapse/expend) -->
  
      <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="nicmem_bibtex"
+     id="ssdcarbon_bibtex"
      class="collapseblock">
  
-     @InProceedings{pismenny22-nicmem,
+     @InProceedings{zuck23-ssdcarbon,
      
      <div>
      <table class="myBib">
@@ -333,44 +297,43 @@
        <td align=right valign=top>author</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {Boris Pismenny and Liran Liss and Adam Morrison and Dan Tsafrir},</td>
+       {Aviad Zuck and Donald E. Porter and Dan Tsafrir},</td>
      </tr>
      <tr>
        <td align=right valign=top>title</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {The benefits of general-purpose {on-NIC} memory},</td>
+       {Degrading {Data} to {Save} the {Planet}},</td>
      </tr>
      <tr>
        <td align=right valign=top>booktitle</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {ACM International Conference on Architectural Support for
-         Programming Languages and Operating Systems (ASPLOS)},</td>
+       {ACM Workshop on Hot Topics in Operating Systems (HotOS)},</td>
      </tr>
      <tr>
        <td align=right valign=top>year</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       2022,</td>
+       2023,</td>
      </tr>
      <tr>
        <td align=right valign=top>month</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {February},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {1130--1147},</td>
+       {June},</td>
      </tr>
      <tr>
        <td align=right valign=top>address</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {Lausanne, Switzerland}</td>
+       {Providence, RI},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -379,6 +342,15 @@
      </div> <!-- of collapse/expend -->
      <p>
      </li>
+ 
+ </ul>
+ 
+ 
+ <!-- ==================== 2022 ==================== -->
+ <!-- ==================== 2022 ==================== -->
+ <!-- ==================== 2022 ==================== -->
+ <h3>2022</h3>
+ <ul>
  
      <!-- ============ cintj ============ -->
      <li>
@@ -505,6 +477,127 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {3:1--3:32}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ nicmem ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="nicmem"></a>
+     <span class="docTitle">
+     The benefits of general-purpose on-NIC memory
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Boris Pismenny, Liran Liss, Adam Morrison, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">ASPLOS '22</span>: ACM International Conference on Architectural Support for
+         Programming Languages and Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     February,
+     2022,
+     Lausanne, Switzerland,
+     pages 1130&ndash;1147
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('nicmem_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('nicmem_bibtex');">BibTeX</a> , 
+     <a  href="papers/nicmem-asplos-2022.pdf">PDF</a> , 
+     <a  href="https://doi.org/10.1145/3503222.3507711">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="nicmem_abstract"
+     class="collapseblock">
+ 
+     We propose to use the small, newly available on-NIC memory
+       (&ldquo;nicmem&rdquo;) to keep pace with the rapidly increasing performance of
+       NICs. We motivate our proposal by accelerating two types of workload
+       classes: NFV and key-value stores. As NFV workloads frequently
+       operate on headers&mdash;rather than data&mdash;of incoming packets, we
+       introduce a new packet-processing architecture that splits between
+       the two, keeping the data on nicmem when possible and thus reducing
+       PCIe traffic, memory bandwidth, and CPU processing time. Our
+       approach consequently shortens NFV latency by up to 23% and
+       increases its throughput by up to 19%. Similarly, because key-value
+       stores commonly exhibit skewed distributions, we introduce a new
+       network stack mechanism that lets applications keep frequently
+       accessed items on nicmem. Our design shortens memcached latency by
+       up to 43% and increases its throughput by up to 80%.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="nicmem_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{pismenny22-nicmem,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Boris Pismenny and Liran Liss and Adam Morrison and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {The benefits of general-purpose {on-NIC} memory},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM International Conference on Architectural Support for
+         Programming Languages and Operating Systems (ASPLOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2022,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {February},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {1130--1147},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Lausanne, Switzerland}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
