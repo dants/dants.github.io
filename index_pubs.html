@@ -157,12 +157,14 @@
      July,
      2023,
      Boston, MA,
-     to appear
+     pages 949&ndash;968
      <br>
  
      <!-- availabilities -->
      <a  href="javascript:toggleblocks('shring_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('shring_bibtex');">BibTeX</a>
+     <a  href="javascript:toggleblocks('shring_bibtex');">BibTeX</a> , 
+     <a  href="papers/shring-osdi-2023.pdf">PDF</a> , 
+     <a  href="https://www.usenix.org/conference/osdi23/presentation/pismenny">Definitive</a>
      <br>
  
      <!-- abstract (collapse/expend) -->
@@ -171,29 +173,27 @@
      id="shring_abstract"
      class="collapseblock">
  
-     Multicore systems employ parallelism to accommodate high incoming
-       Ethernet traffic, allocating one receive (Rx) ring with >=1Ki
-       entries per core, by default. This ring size is sufficient to absorb
-       packet bursts of single-core workloads. But the aggregate memory
-       size of all Rx buffers (pointed to by all Rx rings) can exceed the
-       LLC size. We observe that such an aggregate size might incur
-       nonnegligible overheads when scaling to hundreds of incoming Gbps,
-       as memory accesses to Rx buffers (by either NIC or CPU) are
-       increasingly served by main memory. Rx buffer accesses likewise
-       compete for cache capacity with concurrent accesses unrelated to
-       networking.
+     Multicore systems parallelize to accommodate incoming Ethernet
+       traffic, allocating one receive (Rx) ring with >=1Ki entries per
+       core by default. This ring size is sufficient to absorb packet
+       bursts of single-core workloads. But the combined size of all Rx
+       buffers (pointed to by all Rx rings) can exceed the size of the
+       last-level cache. We observe that, in this case, NIC and CPU memory
+       accesses are increasingly served by main memory, which might incur
+       nonnegligible overheads when scaling to hundreds of incoming
+       gigabits per second.
      
      <br><br>
      
-       To alleviate this problem, we propose "shRing," which shares a
-       single Rx ring among several cores when networking memory bandwidth
-       consumption is high. Helped by minimal firmware changes, we
-       implement shRing on a real NIC. We find that synchronization costs
-       associated with shRing's sharing are offset by its smaller memory
-       footprint, which increases the throughput of NFV workloads by up to
-       1.27x. ShRing's smaller footprint may additionally prevent overload
-       conditions, allowing the system to process packets faster than they
-       arrive and thus reduce the latency by up to 38x.
+       To alleviate this problem, we propose "shRing," which shares each Rx
+       ring among several cores when networking memory bandwidth
+       consumption is high. ShRing thus adds software synchronization
+       costs, but this overhead is offset by the smaller memory footprint.
+       We show that, consequently, shRing increases the throughput of NFV
+       workloads by up to 1.27x, and that it reduces their latency by up to
+       38x. The substantial latency reduction occurs when shRing shortens
+       the per-packet processing time to a value smaller than the packet
+       interarrival time, thereby preventing overload conditions.
  
      </div> <!-- of collapse/expend -->
  
@@ -238,16 +238,16 @@
        {July},</td>
      </tr>
      <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {949--968},</td>
+     </tr>
+     <tr>
        <td align=right valign=top>address</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {Boston, MA},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>note</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {(to appear)}</td>
+       {Boston, MA}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -283,12 +283,54 @@
      June,
      2023,
      Providence, RI,
-     to appear
+     pages 61&ndash;69
      <br>
  
      <!-- availabilities -->
-     <a  href="javascript:toggleblocks('ssdcarbon_bibtex');">BibTeX</a>
+     <a  href="javascript:toggleblocks('ssdcarbon_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('ssdcarbon_bibtex');">BibTeX</a> , 
+     <a  href="papers/ssdcarbon-hotos-2023.pdf">PDF</a> , 
+     <a  href="https://doi.org/10.1145/3593856.3595896">Definitive</a>
      <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="ssdcarbon_abstract"
+     class="collapseblock">
+ 
+     Storage capacity demand is projected to grow exponentially in the
+       coming decade and so will its contribution to the overall carbon
+       footprint of computing devices. In recent years, cloud providers and
+       device vendors have substantially reduced their carbon impact
+       through improved power consumption and product distribution.
+       However, by 2030, the manufacturing of flash-based storage devices
+       will account for 1.7% of carbon emissions in the world. Therefore,
+       reducing production-related carbon emissions of storage is key to
+       sustainability in computing devices.
+     
+     <br><br>
+     
+       We present Sustainability-Oriented Storage (SOS), a new host-device
+       co-design for personal storage devices, which opportunistically
+       improves storage sustainability by: (1)&nbsp;targeting widely-produced
+       flash-based personal storage devices; (2)&nbsp;reducing hardware
+       production through optimizing bit density in existing materials, up
+       to 50
+       effective lifespan of personal devices and longer lifespan of their
+       underlying flash.
+     
+     <br><br>
+     
+       SOS automatically stores low-priority files, occupying most personal
+       storage capacities on high-density flash memories, currently
+       designated for nearline storage. To avoid data loss, low-priority
+       files are allowed to slightly degrade in quality over time.
+       Switching to high-density memories, which maximize production
+       material utilization, reduces the overall carbon footprint of
+       personal storage devices.
+ 
+     </div> <!-- of collapse/expend -->
  
      <!-- bibtex (collapse/expend) -->
  
@@ -331,16 +373,16 @@
        {June},</td>
      </tr>
      <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {61--69},</td>
+     </tr>
+     <tr>
        <td align=right valign=top>address</td>
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
-       {Providence, RI},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>note</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {(to appear)}</td>
+       {Providence, RI}</td>
      </tr>
      </table>
      </div> <!-- bibtex -->
@@ -2433,125 +2475,6 @@
  <h3>2017</h3>
  <ul>
  
-     <!-- ============ flifespan ============ -->
-     <li>
- 
-     <!-- anchor -->
-     <a name="flifespan"></a>
-     <span class="docTitle">
-     Flash drive lifespan *is* a problem
-     </span>
-     <br>
- 
-     <!-- author -->
-     <span class="docAuthors">
-     Tao Zhang, Aviad Zuck, Donald E. Porter, Dan Tsafrir
-     </span>
-     <br>
- 
-     <!-- venue -->
-     <span class="docVenue">
-     <span class="docVenueAbrv">HotOS '17</span>: ACM Workshop on Hot Topics in Operating Systems
-     </span>
-     <br>
- 
-     <!-- details -->
-     May,
-     2017,
-     Whistler, Canada,
-     pages 42&ndash;49
-     <br>
- 
-     <!-- availabilities -->
-     <a  href="javascript:toggleblocks('flifespan_abstract');">Abstract</a> , 
-     <a  href="javascript:toggleblocks('flifespan_bibtex');">BibTeX</a> , 
-     <a  href="papers/fbrick-hotos-2017.pdf">PDF</a> , 
-     <a  href="https://doi.org/10.1145/3102980.3102988">Definitive</a>
-     <br>
- 
-     <!-- abstract (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="flifespan_abstract"
-     class="collapseblock">
- 
-     When flash was introduced, wear-out was a known problem. Over
-         time, a number of techniques have been developed to estimate the
-         expected number of program/erase cycles under typical usage
-         patterns, and sufficiently over-provision the cells such that the
-         device meets its expected lifespan, even if individual cells fail.
-         This paper started as a simple experiment: measuring whether the
-         lifespan of flash devices in smartphones and other mobile devices,
-         match the estimates. To our surprise, we find that, in a matter of
-         days, simple, unprivileged applications can render the drive of
-         several smartphones (and thus, the phone) inoperable. This result
-         is concerning, as it means that installing malicious or
-         poorly-written software could destroy the device itself. We
-         experimentally demonstrate the problem, discuss reasons why it
-         occurs, and consider potential solutions.
- 
-     </div> <!-- of collapse/expend -->
- 
-     <!-- bibtex (collapse/expend) -->
- 
-     <div style="border:1px dotted gray;padding:20px;width:600px"
-     id="flifespan_bibtex"
-     class="collapseblock">
- 
-     @InProceedings{zhang17-flifespan,
-     
-     <div>
-     <table class="myBib">
-     <tr>
-       <td align=right valign=top>author</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Tao Zhang and Aviad Zuck and Donald E. Porter and Dan Tsafrir},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>title</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Flash drive lifespan *is* a problem},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>booktitle</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {ACM Workshop on Hot Topics in Operating Systems (HotOS)},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>year</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       2017,</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>month</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {May},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>pages</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {42--49},</td>
-     </tr>
-     <tr>
-       <td align=right valign=top>address</td>
-       <td align=right valign=top>=</td>
-       <td align=left  valign=top>
-       {Whistler, Canada}</td>
-     </tr>
-     </table>
-     </div> <!-- bibtex -->
-     }
- 
-     </div> <!-- of collapse/expend -->
-     <p>
-     </li>
- 
      <!-- ============ everchng ============ -->
      <li>
  
@@ -2674,6 +2597,125 @@
        <td align=right valign=top>=</td>
        <td align=left  valign=top>
        {50--55},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Whistler, Canada}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ flifespan ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="flifespan"></a>
+     <span class="docTitle">
+     Flash drive lifespan *is* a problem
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Tao Zhang, Aviad Zuck, Donald E. Porter, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">HotOS '17</span>: ACM Workshop on Hot Topics in Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     May,
+     2017,
+     Whistler, Canada,
+     pages 42&ndash;49
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('flifespan_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('flifespan_bibtex');">BibTeX</a> , 
+     <a  href="papers/fbrick-hotos-2017.pdf">PDF</a> , 
+     <a  href="https://doi.org/10.1145/3102980.3102988">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="flifespan_abstract"
+     class="collapseblock">
+ 
+     When flash was introduced, wear-out was a known problem. Over
+         time, a number of techniques have been developed to estimate the
+         expected number of program/erase cycles under typical usage
+         patterns, and sufficiently over-provision the cells such that the
+         device meets its expected lifespan, even if individual cells fail.
+         This paper started as a simple experiment: measuring whether the
+         lifespan of flash devices in smartphones and other mobile devices,
+         match the estimates. To our surprise, we find that, in a matter of
+         days, simple, unprivileged applications can render the drive of
+         several smartphones (and thus, the phone) inoperable. This result
+         is concerning, as it means that installing malicious or
+         poorly-written software could destroy the device itself. We
+         experimentally demonstrate the problem, discuss reasons why it
+         occurs, and consider potential solutions.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="flifespan_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{zhang17-flifespan,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Tao Zhang and Aviad Zuck and Donald E. Porter and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Flash drive lifespan *is* a problem},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM Workshop on Hot Topics in Operating Systems (HotOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2017,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {May},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>pages</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {42--49},</td>
      </tr>
      <tr>
        <td align=right valign=top>address</td>
