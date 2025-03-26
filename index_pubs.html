@@ -125,6 +125,148 @@
 
 <!-- ==== THE BODY ==== -->
 
+ <!-- ==================== 2025 ==================== -->
+ <!-- ==================== 2025 ==================== -->
+ <!-- ==================== 2025 ==================== -->
+ <h3>2025</h3>
+ <ul>
+ 
+     <!-- ============ rxbisect ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="rxbisect"></a>
+     <span class="docTitle">
+     Disentangling the dual role of NIC receive rings
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Boris Pismenny, Adam Morrison, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">OSDI '25</span>: USENIX Symposium on Operating Systems Design and Implementation
+     </span>
+     <br>
+ 
+     <!-- details -->
+     July,
+     2025,
+     Boston, MA,
+     to appear
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('rxbisect_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('rxbisect_bibtex');">BibTeX</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="rxbisect_abstract"
+     class="collapseblock">
+ 
+     CPUs parallelize packet processing on multiple cores via per-core
+       receive ("Rx") rings that are sized to absorb bursts (>=1Ki entries
+       by default). The resulting I/O working set&mdash;all packet buffers
+       pointed to by all Rx rings&mdash;easily exceeds the LLC capacity,
+       resulting in decreased performance due to high memory bandwidth.
+       Recent work has minimized the I/O working set size by sharing Rx
+       buffers among cores via the existing Rx ring interface. However,
+       this approach encounters a bottleneck during imbalanced loads, a
+       situation that is not uncommon.
+     
+     <br><br>
+     
+       We contend that this bottleneck is caused by the unnecessarily
+       entangled nature of two orthogonal "producer-consumer"
+       functionalities: (1) memory allocation, whereby the core "produces"
+       empty buffers that the NIC "consumes" for storing packets; and (2)
+       packet delivery, whereby the NIC "produces" incoming packets that
+       the core "consumes" (receives).
+     
+     <br><br>
+     
+       We propose rxBisect, a new CPU-NIC interface, which decouples these
+       functionalities. RxBisect substitutes each Rx ring with two rings
+       that correspond to the two functionalities, such that memory
+       allocation is done independently of packet reception. RxBisect can
+       thus efficiently pass empty buffers between cores in all scenarios.
+       We implement RxBisect using software emulation. RxBisect improves
+       throughput by up to 20
+       significant latency gains occur when rxBisect meets line rate load
+       whereas the baseline fails to do so.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="rxbisect_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{pismenny25-rxbisect,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Boris Pismenny and Adam Morrison and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Disentangling the dual role of {NIC} receive rings},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {USENIX Symposium on Operating Systems Design and Implementation (OSDI)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2025,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {July},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Boston, MA},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+ </ul>
+ 
+ 
  <!-- ==================== 2023 ==================== -->
  <!-- ==================== 2023 ==================== -->
  <!-- ==================== 2023 ==================== -->
