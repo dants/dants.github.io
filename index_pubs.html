@@ -264,6 +264,252 @@
      <p>
      </li>
  
+     <!-- ============ latency ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="latency"></a>
+     <span class="docTitle">
+     Batching with end-to-end performance estimation
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Aviad Borisov, Nadav Amit, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">HotOS '25</span>: ACM Workshop on Hot Topics in Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     May,
+     2025,
+     Banff, Canada,
+     to appear
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('latency_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('latency_bibtex');">BibTeX</a> , 
+     <a  href="https://doi.org/10.1145/3713082.3730372">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="latency_abstract"
+     class="collapseblock">
+ 
+     Batching heuristics are used in multiple layers of the TCP/IP stack,
+       aiming to improve performance by amortizing overheads. When
+       performance is defined as average latency and throughput, optimal
+       batching decisions can be infeasible if application-perceived
+       end-to-end performance is unknown, which is commonly the case in
+       general-purpose setups. We address this problem by occasionally
+       adding a few easily maintained counters to TCP metadata exchanges
+       and using them to estimate end-to-end performance via Little's law.
+       We experimentally show that these estimates are accurate when
+       application requests can be identified by the kernel (corresponding,
+       for example, to send system calls, packets, or a fixed number of
+       bytes). Had these estimates been used to dynamically toggle Nagle
+       batching, they could have extended Redis's range of sustainable
+       throughput at tolerable latencies by nearly 2x and improved latency
+       within this range by as much as nearly 3x. When the kernel cannot
+       identify requests, we propose that applications optionally use a
+       trivial interface to enlighten it, thereby ensuring accuracy.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="latency_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{borisov25-latency,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Aviad Borisov and Nadav Amit and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Batching with end-to-end performance estimation},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM Workshop on Hot Topics in Operating Systems (HotOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2025,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {May},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Banff, Canada},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+     <!-- ============ salamander ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="salamander"></a>
+     <span class="docTitle">
+     Leveraging software fault tolerance for longer flash hardware lifespan
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Aviad Zuck, Rob Johnson, Donald E. Porter, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">HotOS '25</span>: ACM Workshop on Hot Topics in Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     May,
+     2025,
+     Banff, Canada,
+     to appear
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('salamander_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('salamander_bibtex');">BibTeX</a> , 
+     <a  href="https://doi.org/10.1145/3713082.3730386">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="salamander_abstract"
+     class="collapseblock">
+ 
+     In the context of data center computing, the carbon emission
+       incurred during the manufacturing of solid-state drives (SSDs),
+       called embodied carbon, is increasingly overtaking the emissions
+       caused by powering these drives throughout their operational
+       lifetime. Out of an abundance of caution, current SSDs are designed
+       to fail long before the internal flash components are completely
+       unusable. Although this choice may be appropriate for single-disk
+       systems, distributed storage systems can already tolerate individual
+       SSD failures through redundancy.
+     
+     <br><br>
+     
+       We propose Salamander, a new design for SSD servers where SSDs
+       expose multiple logical minidisks, which match the granularity of
+       hardware failures, so that: (1) as minidisks fail, distributed
+       storage systems can continue using the remaining good capacity; and
+       (2) SSDs may recycle portions of failed minidisks that still have
+       some usable life. Salamander increases the lifespan of SSDs, and
+       therefore amortizes embodied carbon, by incrementally exposing
+       hardware deterioration to the system and leveraging existing,
+       end-to-end redundancy mechanisms to recover from this deterioration.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="salamander_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{zuck25-salamander,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Aviad Zuck and Rob Johnson and Donald E. Porter and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Leveraging software fault tolerance for longer flash hardware lifespan},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM Workshop on Hot Topics in Operating Systems (HotOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2025,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {May},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Banff, Canada},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
  </ul>
  
  
