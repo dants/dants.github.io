@@ -125,6 +125,157 @@
 
 <!-- ==== THE BODY ==== -->
 
+ <!-- ==================== 2027 ==================== -->
+ <!-- ==================== 2027 ==================== -->
+ <!-- ==================== 2027 ==================== -->
+ <h3>2027</h3>
+ <ul>
+ 
+     <!-- ============ moselect ============ -->
+     <li>
+ 
+     <!-- anchor -->
+     <a name="moselect"></a>
+     <span class="docTitle">
+     Selecting memory layouts for model-based
+           microarchitectural performance evaluation
+     </span>
+     <br>
+ 
+     <!-- author -->
+     <span class="docAuthors">
+     Mohammad Agbarya, Idan Yaniv, Dan Tsafrir
+     </span>
+     <br>
+ 
+     <!-- venue -->
+     <span class="docVenue">
+     <span class="docVenueAbrv">ASPLOS '27</span>: ACM International Conference on Architectural Support for
+           Programming Languages and Operating Systems
+     </span>
+     <br>
+ 
+     <!-- details -->
+     April,
+     2027,
+     Heraklion, Greece,
+     Volume 1,
+     to appear
+     <br>
+ 
+     <!-- availabilities -->
+     <a  href="javascript:toggleblocks('moselect_abstract');">Abstract</a> , 
+     <a  href="javascript:toggleblocks('moselect_bibtex');">BibTeX</a> , 
+     <a  href="papers/2027-asplos-moselect.pdf">PDF</a> , 
+     <a  href="https://doi.org/10.1145/3845814.3850070">Definitive</a>
+     <br>
+ 
+     <!-- abstract (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="moselect_abstract"
+     class="collapseblock">
+ 
+     Virtual memory research increasingly relies on empirical
+         performance models that use simulated address translation
+         metrics (<i>x</i>)&mdash;such as TLB miss rate and page-walk cycles&mdash;to
+         predict benchmark runtimes (<i>y</i>) for new hardware designs.
+         The accuracy of these models depends on the training data:
+         a set of <i>(x,y)</i> pairs collected by executing the benchmark
+         on real hardware with memory layouts that mix pages of
+         different sizes. Because the number of possible layouts grows
+         exponentially with address space size, a key challenge is to
+         select layouts that yield informative training samples spanning
+         a broad range of <i>x</i> values.
+     
+     <br><br>
+     
+         Previously proposed selectors rely on flawed heuristics
+         that can leave large gaps in the model's input domain,
+         necessitating a costly manual search for additional layouts.
+         We solve this problem with Moselect, a feedback-driven layout
+         selector that uses previously observed <i>x</i> values to steer
+         selections toward uncovered regions. Moselect eliminates the
+         manual effort, achieves good <i>x</i> domain coverage, converges
+         faster than prior selectors, and significantly reduces worst-case
+         runtime prediction error. Moreover, the higher-quality training
+         data Moselect yields allow simpler simulators and runtime models
+         to achieve worst-case prediction errors similar to those of their
+         more sophisticated counterparts.
+ 
+     </div> <!-- of collapse/expend -->
+ 
+     <!-- bibtex (collapse/expend) -->
+ 
+     <div style="border:1px dotted gray;padding:20px;width:600px"
+     id="moselect_bibtex"
+     class="collapseblock">
+ 
+     @InProceedings{agbarya27-moselect,
+     
+     <div>
+     <table class="myBib">
+     <tr>
+       <td align=right valign=top>author</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Mohammad Agbarya and Idan Yaniv and Dan Tsafrir},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>title</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Selecting memory layouts for model-based
+           microarchitectural performance evaluation},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>booktitle</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {ACM International Conference on Architectural Support for
+           Programming Languages and Operating Systems (ASPLOS)},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>volume</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       1,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>year</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       2027,</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>month</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {April},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>address</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {Heraklion, Greece},</td>
+     </tr>
+     <tr>
+       <td align=right valign=top>note</td>
+       <td align=right valign=top>=</td>
+       <td align=left  valign=top>
+       {(to appear)}</td>
+     </tr>
+     </table>
+     </div> <!-- bibtex -->
+     }
+ 
+     </div> <!-- of collapse/expend -->
+     <p>
+     </li>
+ 
+ </ul>
+ 
+ 
  <!-- ==================== 2026 ==================== -->
  <!-- ==================== 2026 ==================== -->
  <!-- ==================== 2026 ==================== -->
